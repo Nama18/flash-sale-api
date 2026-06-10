@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    /** GET /api/products */
     public function index(): JsonResponse
     {
         return response()->json([
@@ -18,7 +17,6 @@ class ProductController extends Controller
         ]);
     }
 
-    /** POST /api/products */
     public function store(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -36,7 +34,6 @@ class ProductController extends Controller
         ], 201);
     }
 
-    /** GET /api/products/{product} */
     public function show(Product $product): JsonResponse
     {
         return response()->json([
@@ -45,7 +42,6 @@ class ProductController extends Controller
         ]);
     }
 
-    /** PUT /api/products/{product} */
     public function update(Request $request, Product $product): JsonResponse
     {
         $validated = $request->validate([
@@ -63,7 +59,6 @@ class ProductController extends Controller
         ]);
     }
 
-    /** DELETE /api/products/{product} */
     public function destroy(Product $product): JsonResponse
     {
         $product->delete();

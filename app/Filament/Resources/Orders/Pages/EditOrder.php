@@ -16,7 +16,6 @@ class EditOrder extends EditRecord
     {
         $data  = $this->form->getRawState();
 
-        // Ambil items dari UUID-keyed array
         $items = array_values(array_map(fn($item) => [
             'product_id' => (int) $item['product_id'],
             'quantity'   => (int) $item['quantity'],

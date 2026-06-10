@@ -26,9 +26,6 @@ class User extends Authenticatable implements FilamentUser
         ];
     }
 
-    /**
-     * Izinkan semua user akses panel Filament.
-     */
     public function canAccessPanel(Panel $panel): bool
     {
         return true;

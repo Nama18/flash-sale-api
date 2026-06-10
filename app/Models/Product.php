@@ -9,9 +9,7 @@ class Product extends Model
 {
     protected $fillable = ['name', 'price', 'flash_sale_price', 'stock'];
 
-    /**
-     * Harga efektif: pakai flash_sale_price kalau ada, kalau tidak pakai price biasa.
-     */
+    // flash sale price takes priority
     public function getEffectivePriceAttribute(): int
     {
         return $this->flash_sale_price ?? $this->price;

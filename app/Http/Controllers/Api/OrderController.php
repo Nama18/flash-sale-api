@@ -13,7 +13,6 @@ class OrderController extends Controller
 {
     public function __construct(private readonly OrderService $orderService) {}
 
-    /** GET /api/orders */
     public function index(): JsonResponse
     {
         $orders = Order::with('items.product')->latest()->get();
@@ -24,7 +23,6 @@ class OrderController extends Controller
         ]);
     }
 
-    /** POST /api/orders */
     public function store(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -62,7 +60,6 @@ class OrderController extends Controller
         }
     }
 
-    /** GET /api/orders/{order} */
     public function show(Order $order): JsonResponse
     {
         return response()->json([
@@ -71,7 +68,6 @@ class OrderController extends Controller
         ]);
     }
 
-    /** PUT /api/orders/{order} */
     public function update(Request $request, Order $order): JsonResponse
     {
         $validated = $request->validate([
@@ -110,7 +106,6 @@ class OrderController extends Controller
         }
     }
 
-    /** DELETE /api/orders/{order} */
     public function destroy(Order $order): JsonResponse
     {
         try {

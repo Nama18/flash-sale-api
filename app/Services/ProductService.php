@@ -7,27 +7,17 @@ use Illuminate\Validation\ValidationException;
 
 class ProductService
 {
-    /**
-     * Buat produk baru.
-     */
     public function createProduct(array $data): Product
     {
         return Product::create($data);
     }
 
-    /**
-     * Update produk.
-     */
     public function updateProduct(Product $product, array $data): Product
     {
         $product->update($data);
         return $product->fresh();
     }
 
-    /**
-     * Hapus produk.
-     * Tidak boleh dihapus kalau masih ada order item yang aktif.
-     */
     public function deleteProduct(Product $product): void
     {
         $activeOrders = $product->orderItems()
