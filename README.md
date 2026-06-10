@@ -11,13 +11,15 @@ REST API untuk online store dengan fitur flash sale, dibuat menggunakan Laravel 
 
 ## Admin Panel
 
-|              |                   |
-| ------------ | ----------------- |
-| **URL**      | `{APP_URL}/admin` |
-| **Email**    | `admin@admin.com` |
-| **Password** | `password`        |
+|              |                                                               |
+| ------------ | ------------------------------------------------------------- |
+| **URL**      | `https://flash-sale-api-production-b42f.up.railway.app/admin` |
+| **Email**    | `admin@admin.com`                                             |
+| **Password** | `password`                                                    |
 
 ## API Endpoints
+
+`https://flash-sale-api-production-b42f.up.railway.app/`
 
 ### Products
 
