@@ -7,6 +7,5 @@ use Illuminate\Support\Facades\Route;
 // Products CRUD
 Route::apiResource('products', ProductController::class);
 
-// Orders
-Route::post('/orders', [OrderController::class, 'store']);
-Route::get('/orders/{order}', [OrderController::class, 'show']);
+// Orders CRUD
+Route::apiResource('orders', OrderController::class);
